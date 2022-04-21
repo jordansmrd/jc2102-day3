@@ -12,6 +12,24 @@ break
 console.log('kumpulan angka = ' + kumpulanAngka)
 
 
+//break
+kumpulanAngka = ""
+for(let i = 1; i<= 5; i++ )
+{
+if(i == 3) //stop looping apabila nilai angka = 3
+{
+continue
+}
+kumpulanAngka += i + " "
+  
+
+
+}
+console.log('kumpulan angka = ' + kumpulanAngka)
+
+
+
+
 for(let i = 1; i<= 5; i++ )
 {
 kumpulanAngka += i + " "
@@ -112,18 +130,27 @@ console.log(typeof(fruits.join("/")))
 
 const things  = [
     ["red pen", "blue pen"],
-    ["analog clock" , "digital clock" , "smart watch"]
+    ["analog clock" , "digital clock" , "smart watch"] ,
 ]
+console.log(things.length) // 2
+console.log(things[1].length) // 3 
+
 console.log('array index pertama adalah '+ things[1] + ' ')
 console.log('array index kedua dengan mengakses index 1 adalah ' + things[1][1] + ' ')
-for(let i = 0;i< things.length;i++ )
+for(let i = 0;i< things.length;i++ ) //loop dimensi array ke 1
 {
-    for(let k = 0;k< things[i].length;k++ )
+    for(let k = 0;k< things[i].length;k++ ) // loop dimensi array ke 2
     {
-    console.log('nilai dari  index ' + things[i][k])
+    console.log(  things[i][k] )
     }
 }
 
+let a = ['a', 'b', 'c']
+const b = ['c', 'd', 'e']
+ a = a.concat(b)
+//  console.log(x)
+ console.log(a)
+ console.log(b)
 
 //exercise film
 let kategoris = ['Horror' , 'Sci-fi', 'Thriller', 'Romance', 'Adventure']
@@ -133,5 +160,5 @@ let info = `terdapat ${kategoris.length} untuk film \n`
 for(let i = 0; i < kategoris.length; i++)
 {
  info += ` ${kategoris[i]} \n`   
-}
+} 
 console.log(info)
