@@ -9,7 +9,18 @@
         ['manggis', 7, 5000], 
         ['mangga', 9, 5000], 
 ]
+//jeruk 0 
+//mangga 1
+
+
+//nama buah
+//stock
+//harga
+
+//jika pilih 5 maka exit 
+
     while (pilihan != 5) {
+        //balik ke task
         pilihan = prompt(`
          1. Menampilkan daftar buah2 \n
          2. Menambah buah \n 
@@ -20,6 +31,11 @@
          //menampilkan isi buah
         if(pilihan == 1)
         {
+// `buah apel total stock 10 harga rp.10000
+//  buah jeruk total stock 5 harga rp.5000
+//  buah nanas total stock 8 harga rp.5000
+//  buah manggis total stock 7 harga rp.5000
+//  buah mangga total stock 8 harga rp.5000` _
         let infoBuah = ''
             for(let i = 0; i < fruits.length; i++)
             {
@@ -29,22 +45,28 @@
         }
         else if (pilihan == 2)
         {
-            let temp = []
+            let temp = []// temp
         
-            let buah = prompt('Silahkan nama buah yang ingin dibeli:') 
+            let buah = prompt('Silahkan ketik nama buah yang ingin dibeli:') 
+            //jeruk
             for(let i = 0 ; i < fruits.length; i++)
             {
-               temp.push(fruits[i][0])
+               temp.push(fruits[i][0]) //method untuk add ke dalam array
+               //temp = [apel,jeruk,nanas, ,manggis, mangga]
             }
 
              //check nama buah
-            if(!temp.includes(buah)){
+            if(!temp.includes(buah))// not true
+            //includes ngecheck isi dari array temp ('apel') 
+            //true 
+            {
                 alert('buah tidak ditemukan')
-                continue
+                continue // jika tidak menggunakan continue maka dia akan ngecheck task/line berikutnya diluar looping
             }
             if(!keranjang.includes(buah))
             {
-                keranjang.push(buah)
+                keranjang.push(buah) //add ke array keranjang
+                //keranjang= [apel]
             }
             
         }
@@ -53,6 +75,7 @@
         {
             //menghapus buah
             let Cart = keranjang.length? keranjang.join(', '): ''
+
             let deletedFruits = prompt('Buah apa yang ingin dihapus? \n Daftar keranjang : ' 
             + Cart)
 
@@ -72,15 +95,30 @@
             let TotalHarga = 0
             let show  = ''
              
+            // prompt buah apa? qty brp? 
+            // buah 2 
+            // 2x 
             for(let i=0;i < keranjang.length; i++)
             {
             qty = prompt(`Berapa qty buah ${keranjang[i]} yang ingin dibeli?` )
+            //berapa qty jeruk yang ingin dibeli? 
                 for(let k = 0 ; k < fruits.length; k++)
                 {
                 if( fruits[k].includes(keranjang[i]) )
                 {
-                show +=  `Buah ${keranjang[i]} qty ${qty} @Harga Rp.${(fruits[i][2])} Total Rp.${qty *(fruits[i][2])} \n`
-                TotalHarga += qty *(fruits[i][2])
+                    let hargaSatuan = fruits[k][2];
+
+                show +=  `Buah ${keranjang[i]} qty ${qty} @Harga Rp.${hargaSatuan} Total Rp.${qty *hargaSatuan} \n`
+                //buah jeruk qty 3 harga @rp 5000 total rp.15000 \n
+                //buah mangga qty 5 harga @rp 5000 total rp.25000
+                TotalHarga += qty * hargaSatuan // 15000 + 25000
+
+                //array fruit 
+                //fruit[?][2]
+
+                //fruit.indexOf(keranjang[i])
+
+
               }              
             }
             }            
@@ -91,8 +129,9 @@
 
         }
 
-
     }
 
 
 </script>
+
+
