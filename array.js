@@ -1,24 +1,26 @@
 //break
 let kumpulanAngka = "";
 for (let i = 1; i <= 5; i++) {
-  kumpulanAngka += i + " ";
   if (i == 3) {
     //stop looping apabila nilai angka = 3
     break;
   }
+  kumpulanAngka += i + " ";
 }
+
 console.log("kumpulan angka = " + kumpulanAngka);
 
 //break
 kumpulanAngka = "";
 for (let i = 1; i <= 5; i++) {
   if (i == 3) {
-    //stop looping apabila nilai angka = 3
+    //skip looping apabila nilai angka = 3
     continue;
   }
   kumpulanAngka += i + " ";
 }
 console.log("kumpulan angka = " + kumpulanAngka);
+1, 2, 4, 5;
 
 for (let i = 1; i <= 5; i++) {
   kumpulanAngka += i + " ";
@@ -87,7 +89,8 @@ const newArr = angka.map(Math.sqrt); //akar
 console.log(newArr);
 
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const citrus = fruits.slice(0, 3); //mengambil element dari sebuah array (startindex, berapa banyak element)
+const citrus = fruits.slice(undefined, 5);
+//mengambil element dari sebuah array (startindex, berapa banyak element)
 console.log(citrus);
 
 fruits.unshift("Lemon", "Pineapple"); // add element to the first index
